@@ -101,7 +101,13 @@ SideInstaller 在设备上完成整个设置流程。它负责配对、描述文
 
    ```sh
    curl -fsSLO https://raw.githubusercontent.com/FrizzleM/siboot/main/rootshell/bin/siboot-pair.wasm
+   ```
+
+   ```sh
    ifconfig en0 > ifconfig.txt
+   ```
+
+   ```sh
    ./siboot-pair.wasm
    ```
 

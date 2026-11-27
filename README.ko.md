@@ -101,7 +101,13 @@ App Store에서 세 앱을 모두 설치하세요:
 
    ```sh
    curl -fsSLO https://raw.githubusercontent.com/FrizzleM/siboot/main/rootshell/bin/siboot-pair.wasm
+   ```
+
+   ```sh
    ifconfig en0 > ifconfig.txt
+   ```
+
+   ```sh
    ./siboot-pair.wasm
    ```
 

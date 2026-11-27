@@ -101,7 +101,13 @@ App Store から次の 3 つすべてをインストールします。
 
    ```sh
    curl -fsSLO https://raw.githubusercontent.com/FrizzleM/siboot/main/rootshell/bin/siboot-pair.wasm
+   ```
+
+   ```sh
    ifconfig en0 > ifconfig.txt
+   ```
+
+   ```sh
    ./siboot-pair.wasm
    ```
 
