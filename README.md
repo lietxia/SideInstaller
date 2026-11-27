@@ -2,15 +2,17 @@
 
 <img src="app-icon.png" alt="SideInstaller" width="120" />
 
+<a id="doc-h1" name="doc-h1"></a>
 # SideInstaller
 
-**Install SideStore and LiveContainer directly on your iPhone. No PC required.**
+**Install SideStore and LiveContainer directly on your iPhone — no PC required.**
 
 [![Install](https://img.shields.io/badge/Install-SideInstaller-2ea44f?style=for-the-badge)](https://sideinstaller.net/)
 [![Version](https://img.shields.io/badge/version-2.2.0-2669ed?style=for-the-badge)](CHANGELOG.md)
-[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?style=for-the-badge&logo=apple)](#requirements)
+[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?style=for-the-badge&logo=apple)](#doc-h4)
 [![License](https://img.shields.io/badge/license-Custom-orange?style=for-the-badge)](LICENSE.md)
 
+🌐 **Language / 语言:** [English](README.md) · [简体中文](README.zh-CN.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Tiếng Việt](README.vi.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português](README.pt-BR.md) · [Türkçe](README.tr.md)
 
 </div>
 
@@ -31,10 +33,37 @@
 > app repo, or mirror, no matter how official it looks. Redistributing my builds without explicit consent is also prohibited by
 > the [license](LICENSE.md).
 >
-> There is a fake site called “sideinstaller.com”. This site is **not legit**, and is likely providing malware. Please make sure
+> There is a fake site called "sideinstaller.com". This site is **not legit**, and is likely providing malware. Please make sure
 > you only download from the **official sources** listed above.
+
+> [!NOTE]
+> **About this fork — documentation only.** This fork exists solely to translate and clarify these
+> instructions. It builds and ships **no app binary**; every download link still points to the official
+> sources above. The app's source code here is unmodified. Always get the actual app from
+> https://sideinstaller.net/ — never from a fork, mirror, or rebuilt IPA.
+
 ---
 
+<a id="doc-h2" name="doc-h2"></a>
+## On this page
+
+- [What it is](#doc-h3)
+- [Requirements](#doc-h4)
+- [How to use it](#doc-h5)
+  - [Method A — siboot (iOS 27+, no PC)](#doc-h6)
+  - [Method B — enterprise certificate (older iOS)](#doc-h11)
+  - [Links](#doc-h12)
+  - [Shortcuts](#doc-h13)
+- [Compatibility](#doc-h14)
+  - [iOS 26.4 to 26.x: a remote pairing file](#doc-h15)
+- [Is SideInstaller safe?](#doc-h16)
+- [Project layout](#doc-h17)
+- [Contributing](#doc-h18)
+- [License](#doc-h19)
+
+---
+
+<a id="doc-h3" name="doc-h3"></a>
 ## What it is
 
 SideStore and LiveContainer are currently the best way to sideload on iOS. However, there's one big
@@ -54,25 +83,51 @@ biggest barrier to getting started.
 And because it's open source, you don't have to take my word for any of it. The full code is available for
 anyone to read, audit, or contribute to, so you can see exactly what's running on your device.
 
+<a id="doc-h4" name="doc-h4"></a>
 ## Requirements
 
-- An iPhone or iPad on iOS 27+ (iOS 17.4+ with a pairing file
-  made on a computer; from iOS 26.4, a [remote pairing one](#ios-264-to-26x-a-remote-pairing-file))
-- Wi-Fi (first time only)
-- Your Apple account credentials (not collected)
+Before you start, make sure you have:
 
+- **An iPhone or iPad** on **iOS 27+** — on iOS 17.4+ with a pairing file made on a computer; from
+  iOS 26.4 a [remote pairing file](#doc-h15) is needed. See the
+  [compatibility table](#doc-h14).
+- **Wi-Fi** (first time only).
+- **Developer Mode** turned on (for the siboot method).
+- **Your Apple account credentials** — used only on-device to sign apps; never collected.
 
+<a id="doc-h5" name="doc-h5"></a>
 ## How to use it
 
-[siboot](https://github.com/FrizzleM/siboot) installs SideInstaller from the iPhone itself, signed
-with your own Apple account: no computer and no certificate. You need iOS 27 or later, Wi-Fi and
-Developer Mode on. [sideinstaller.net](https://sideinstaller.net/) shows steps 1 to 3.
+There are two installation methods. Pick the one that matches your iOS version:
 
-1. **Get the apps.** Install [rootshell](https://apps.apple.com/app/rootshell-local-terminal-ssh/id6755794662),
-   [Open Minis](https://apps.apple.com/app/id6759188481) and
-   [LocalDevVPN](https://apps.apple.com/app/id6755608044), all free on the App Store.
-2. **Pair in rootshell.** Turn on **Settings › Location Diary Mode › Session Only** in rootshell,
-   then tap **Local Shell** and **Open** at the top right, and run these one line at a time:
+| Your situation | Method | PC needed? |
+| --- | --- | --- |
+| iOS 27 or later | [Method A — siboot](#doc-h6) (recommended) | No |
+| iOS 17.4 – 26.7, or siboot doesn't work for you | [Method B — enterprise certificate](#doc-h11) | Yes, once |
+
+<a id="doc-h6" name="doc-h6"></a>
+### Method A — siboot (iOS 27+, no PC)
+
+[siboot](https://github.com/FrizzleM/siboot) installs SideInstaller from the iPhone itself, signed
+with your own Apple account: no computer and no certificate. You need **iOS 27 or later**, **Wi-Fi**, and
+**Developer Mode on**. The website [sideinstaller.net](https://sideinstaller.net/) shows steps 1 to 3
+visually.
+
+<a id="doc-h7" name="doc-h7"></a>
+#### Step 1 — Install three free apps
+
+Install all three from the App Store:
+
+- [rootshell](https://apps.apple.com/app/rootshell-local-terminal-ssh/id6755794662)
+- [Open Minis](https://apps.apple.com/app/id6759188481)
+- [LocalDevVPN](https://apps.apple.com/app/id6755608044)
+
+<a id="doc-h8" name="doc-h8"></a>
+#### Step 2 — Pair in rootshell
+
+1. In rootshell, turn on **Settings › Location Diary Mode › Session Only**.
+2. Tap **Local Shell**, then **Open** at the top right.
+3. Run these commands **one line at a time**:
 
    ```sh
    curl -fsSLO https://raw.githubusercontent.com/FrizzleM/siboot/main/rootshell/bin/siboot-pair.wasm
@@ -80,53 +135,67 @@ Developer Mode on. [sideinstaller.net](https://sideinstaller.net/) shows steps 1
    ./siboot-pair.wasm
    ```
 
-   Open **Settings › Privacy & Security › Developer Mode**, scroll to the bottom, tap
-   **Pair with siboot**, and enter your passcode and the code rootshell shows. Leave rootshell running.
-3. **Install from Open Minis.** Connect LocalDevVPN. In Open Minis, tap the console icon at the
-   top right, then **Shell Terminal**, and run:
+4. Open **Settings › Privacy & Security › Developer Mode**, scroll to the bottom, tap
+   **Pair with siboot**, then enter your passcode and the code rootshell shows.
+5. **Leave rootshell running** — don't close it.
+
+<a id="doc-h9" name="doc-h9"></a>
+#### Step 3 — Install from Open Minis
+
+1. Connect **LocalDevVPN**.
+2. In **Open Minis**, tap the console icon at the top right, then **Shell Terminal**.
+3. Run:
 
    ```sh
    wget -qO- https://raw.githubusercontent.com/FrizzleM/siboot/main/minis/install.sh | sh
    ```
 
-   Type the transfer code rootshell shows (only the first time: after that, siboot uses the pairing
-   file it saved), then your Apple account email, password and verification code. Keep Minis open
-   until it says it's done. The first time, trust your Apple account in
+4. Enter the transfer code rootshell shows — **only the first time**; after that, siboot uses the pairing
+   file it saved.
+5. Enter your Apple account **email**, **password**, and **verification code**.
+6. **Keep Minis open** until it says it's done. The first time, trust your Apple account in
    **Settings › General › VPN & Device Management**.
-4. **Open SideInstaller.** With LocalDevVPN connected, log in with your Apple account and tap
-   **Install SideStore** or **Install SideStore + LiveContainer**.
 
-Once paired, `siboot developer-mode` in Open Minis asks the iPhone to show the Developer Mode switch
-in Settings, or with `--turn-on` to turn it on ([details](https://github.com/FrizzleM/siboot/blob/main/minis/README.md#developer-mode)).
+<a id="doc-h10" name="doc-h10"></a>
+#### Step 4 — Open SideInstaller
 
-### Legacy: enterprise certificates
+With **LocalDevVPN connected**, log in with your Apple account and tap **Install SideStore** or
+**Install SideStore + LiveContainer**. Done.
 
-Before iOS 27, or if siboot doesn't work for you, install SideInstaller with one of the enterprise
-certificates at [sideinstaller.net/#legacy](https://sideinstaller.net/#legacy) instead, then go on
-from step 4.
+> **After pairing:** running `siboot developer-mode` in Open Minis asks the iPhone to show the Developer
+> Mode switch in Settings; add `--turn-on` to turn it on. See the
+> [details](https://github.com/FrizzleM/siboot/blob/main/minis/README.md#developer-mode).
 
+<a id="doc-h11" name="doc-h11"></a>
+### Method B — enterprise certificate (older iOS)
+
+On iOS versions before 27, or if siboot doesn't work for you, install SideInstaller with one of the
+enterprise certificates at [sideinstaller.net/#legacy](https://sideinstaller.net/#legacy), then continue
+from **Step 4** above. (Older versions also need a pairing file — see [Compatibility](#doc-h14).)
+
+<a id="doc-h12" name="doc-h12"></a>
 ### Links
 
 SideInstaller opens three kinds of `sideinstaller://` link, and asks before acting on any of them:
 
-- `sideinstaller://install?url=<percent-encoded https link to an .ipa>` downloads the IPA as the
-  custom .ipa and installs it, for one-tap installs from a website.
-- `sideinstaller://pairingFile?data=<base64 pairing file>` imports a pairing file. SideStore sends
-  one back when asked with `sidestore://pairing?urlname=sideinstaller`, which is what **Get it from
-  SideStore** on the Pairing file card does.
-- `sideinstaller://certificate?data=<base64 PKCS#12>&password=<password>` makes SideInstaller sign
-  with that certificate from then on, once Apple lists it among your Apple ID's certificates.
-  **Use SideStore's certificate** (on the “A certificate already exists” popup and the Certificates
-  page) asks SideStore for its own with
-  `sidestore://certificate?callback_template=sideinstaller://certificate?data=$(BASE64_CERT)&password=$(PASSWORD)`
-  (percent-encoded), so a free Apple ID's one certificate serves both apps. That reply is the one
-  link that doesn't ask again: SideStore has just asked whether to export it.
+| Link | What it does |
+| --- | --- |
+| `sideinstaller://install?url=<percent-encoded https link to an .ipa>` | Downloads the IPA as the custom .ipa and installs it — for one-tap installs from a website. |
+| `sideinstaller://pairingFile?data=<base64 pairing file>` | Imports a pairing file. SideStore sends one back when asked with `sidestore://pairing?urlname=sideinstaller` — that's what **Get it from SideStore** on the Pairing file card does. |
+| `sideinstaller://certificate?data=<base64 PKCS#12>&password=<password>` | Makes SideInstaller sign with that certificate from then on, once Apple lists it among your Apple ID's certificates. |
+
+**Use SideStore's certificate** (on the "A certificate already exists" popup and the Certificates page)
+asks SideStore for its own with
+`sidestore://certificate?callback_template=sideinstaller://certificate?data=$(BASE64_CERT)&password=$(PASSWORD)`
+(percent-encoded), so a free Apple ID's one certificate serves both apps. That reply is the one link that
+doesn't ask again: SideStore has just asked whether to export it.
 
 Discord and most chat apps only make `https://` links tappable, so to post an install link there use
 `https://sideinstaller.net/open.html?url=<percent-encoded https link to an .ipa>`. That page shows
 where the IPA downloads from and hands it to `sideinstaller://install`, with a button for when iOS
 doesn't open the app on its own.
 
+<a id="doc-h13" name="doc-h13"></a>
 ### Shortcuts
 
 SideInstaller's tools are actions in the Shortcuts app, so a shortcut, an automation, the Action
@@ -150,20 +219,21 @@ The others run in the background, over LocalDevVPN like the app's own pages, so 
 be up: connect it before them (Shortcuts' Set VPN action can), or turn on **Start LocalDevVPN when
 needed**, and the action asks to continue in SideInstaller to connect it. A location set from a
 shortcut stays set until Reset Location: SideInstaller keeps running in the background to hold it,
-as it does when you set one in the app. Siri knows “Spoof my location to *saved place* with
-SideInstaller”, “Reset my location with SideInstaller” and “Refresh my apps with SideInstaller”.
+as it does when you set one in the app. Siri knows "Spoof my location to *saved place* with
+SideInstaller", "Reset my location with SideInstaller" and "Refresh my apps with SideInstaller".
 The actions' names are in English; what they say when they run is in SideInstaller's language.
 
-
+<a id="doc-h14" name="doc-h14"></a>
 ## Compatibility
 
 | iOS | Is it compatible? |
 | --- | --- |
-| 27+ | ✅ Yes |
-| 26.4 - 26.7 | ⚠️ Yes, but [a remote pairing file is needed](#ios-264-to-26x-a-remote-pairing-file), and that requires a PC |
-| 17.4 - 26.3 | ⚠️ Yes, but [a pairing file is needed](https://docs.sidestore.io/docs/advanced/alternative#pairing), and that requires a PC |
+| 27+ | ✅ Yes — no PC needed with siboot |
+| 26.4 – 26.7 | ⚠️ Yes, but [a remote pairing file is needed](#doc-h15), and that requires a PC |
+| 17.4 – 26.3 | ⚠️ Yes, but [a pairing file is needed](https://docs.sidestore.io/docs/advanced/alternative#pairing), and that requires a PC |
 | <17.4 | ❌ No |
 
+<a id="doc-h15" name="doc-h15"></a>
 ### iOS 26.4 to 26.x: a remote pairing file
 
 Since iOS 26.4, the iPhone hangs up on lockdown pairing files (from jitterbugpair,
@@ -181,14 +251,14 @@ file still works:
 A pairing file exported from [iLoader](https://github.com/nab138/iloader) (**Manage Pairing File** ›
 **Export**) holds both kinds and works too.
 
-
+<a id="doc-h16" name="doc-h16"></a>
 ## Is SideInstaller safe?
 
 SideInstaller is built with safety and privacy in mind. The app is fully local and open source, which means
 anyone can inspect exactly what it does.
 
 **Your Apple credentials never leave your device.** They're used locally, only to sign and install your
-  apps, and are never transmitted, logged, or collected in any way.
+apps, and are never transmitted, logged, or collected in any way.
 
 **No server, no analytics, no account.** Nothing is collected and there's nothing to sign up for.
 
@@ -201,6 +271,7 @@ anyone can inspect exactly what it does.
 > https://sideinstaller.net/, don't trust it with your
 > credentials.
 
+<a id="doc-h17" name="doc-h17"></a>
 ## Project layout
 
 | Path | What's in it |
@@ -216,11 +287,12 @@ Signed builds and the install page live in [FrizzleM/SideInstaller-Signed](https
 it signs each release's IPA with every certificate, attaches the signed IPAs to a release of its own and
 deploys [sideinstaller.net](https://sideinstaller.net/). No IPA is ever committed to either repository.
 
-siboot, which installs SideInstaller [from the iPhone itself](#how-to-use-it),
+siboot, which installs SideInstaller [from the iPhone itself](#doc-h5),
 lives in [FrizzleM/siboot](https://github.com/FrizzleM/siboot). It builds this repository's vendored crates
 and rust-core's `apple_session.rs` and `error_text.rs` through a submodule pinned to one commit, so a change
 here reaches siboot only when that pin moves.
 
+<a id="doc-h18" name="doc-h18"></a>
 ## Contributing
 
 Issues and pull requests are welcome. If you're reporting a bug, please include your iOS version, the app
@@ -232,6 +304,7 @@ the app's unit tests, and the translations (a string added to the app needs an e
 `scripts/check-ios.sh` (in a clean clone, since it generates the Xcode project) and
 `scripts/check_translations.py`.
 
+<a id="doc-h19" name="doc-h19"></a>
 ## License
 
 See [LICENSE.md](LICENSE.md). In short: you may read, modify, and share the **source**, with attribution,
@@ -240,6 +313,6 @@ form requires written permission.
 
 <div align="center">
 
-**SideInstaller by [FrizzleM](https://github.com/FrizzleM)**
+**SideInstaller by [FrizzleM](https://github.com/FrizzleM)** · Documentation translations in this fork are community contributions; the app remains © FrizzleM.
 
 </div>
