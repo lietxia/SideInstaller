@@ -2,14 +2,13 @@
 
 <img src="app-icon.png" alt="SideInstaller" width="120" />
 
-<a id="doc-h1" name="doc-h1"></a>
 # SideInstaller
 
 **SideStore ve LiveContainer'ı doğrudan iPhone'una yükle — bilgisayar gerekmez.**
 
 [![Install](https://img.shields.io/badge/Install-SideInstaller-2ea44f?style=for-the-badge)](https://sideinstaller.net/)
 [![Version](https://img.shields.io/badge/version-2.2.0-2669ed?style=for-the-badge)](CHANGELOG.md)
-[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?style=for-the-badge&logo=apple)](#doc-h4)
+[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?style=for-the-badge&logo=apple)](#gereksinimler)
 [![License](https://img.shields.io/badge/license-Custom-orange?style=for-the-badge)](LICENSE.md)
 
 🌐 **Language / 语言:** [English](README.md) · [简体中文](README.zh-CN.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Tiếng Việt](README.vi.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português](README.pt-BR.md) · [Türkçe](README.tr.md)
@@ -44,26 +43,24 @@
 
 ---
 
-<a id="doc-h2" name="doc-h2"></a>
 ## Bu sayfada
 
-- [Nedir](#doc-h3)
-- [Gereksinimler](#doc-h4)
-- [Nasıl kullanılır](#doc-h5)
-  - [Yöntem A — siboot (iOS 27+, bilgisayarsız)](#doc-h6)
-  - [Yöntem B — kurumsal sertifika (eski iOS)](#doc-h11)
-  - [Bağlantılar](#doc-h12)
-  - [Kestirmeler](#doc-h13)
-- [Uyumluluk](#doc-h14)
-  - [iOS 26.4'ten 26.x'e: uzaktan eşleme dosyası](#doc-h15)
-- [SideInstaller güvenli mi?](#doc-h16)
-- [Proje yapısı](#doc-h17)
-- [Katkıda bulunma](#doc-h18)
-- [Lisans](#doc-h19)
+- [Nedir](#nedir)
+- [Gereksinimler](#gereksinimler)
+- [Nasıl kullanılır](#nasıl-kullanılır)
+  - [Yöntem A — siboot (iOS 27+, bilgisayarsız)](#yöntem-a--siboot-ios-27-bilgisayarsız)
+  - [Yöntem B — kurumsal sertifika (eski iOS)](#yöntem-b--kurumsal-sertifika-eski-ios)
+  - [Bağlantılar](#bağlantılar)
+  - [Kestirmeler](#kestirmeler)
+- [Uyumluluk](#uyumluluk)
+  - [iOS 26.4'ten 26.x'e: uzaktan eşleme dosyası](#ios-264ten-26xe-uzaktan-eşleme-dosyası)
+- [SideInstaller güvenli mi?](#sideinstaller-güvenli-mi)
+- [Proje yapısı](#proje-yapısı)
+- [Katkıda bulunma](#katkıda-bulunma)
+- [Lisans](#lisans)
 
 ---
 
-<a id="doc-h3" name="doc-h3"></a>
 ## Nedir
 
 SideStore ve LiveContainer şu anda iOS'ta yan yüklemenin en iyi yolu. Ancak büyük bir sorun var:
@@ -83,29 +80,26 @@ en büyük engeli kaldırıyor.
 Açık kaynaklı olduğu için hiçbir şeyi sadece benim sözüme güvenerek kabul etmen gerekmiyor. Tüm kod
 herkesin okuyabilmesi, denetleyebilmesi veya katkıda bulunabilmesi için mevcut; cihazında tam olarak neyin çalıştığını görebilirsin.
 
-<a id="doc-h4" name="doc-h4"></a>
 ## Gereksinimler
 
 Başlamadan önce şunlara sahip olduğundan emin ol:
 
 - **iOS 27+** üzerinde bir **iPhone veya iPad** — iOS 17.4+ için bilgisayarda oluşturulmuş bir eşleme
-  dosyasıyla; iOS 26.4'ten itibaren bir [uzaktan eşleme dosyası](#doc-h15)
-  gerekir. [Uyumluluk tablosuna](#doc-h14) bak.
+  dosyasıyla; iOS 26.4'ten itibaren bir [uzaktan eşleme dosyası](#ios-264ten-26xe-uzaktan-eşleme-dosyası)
+  gerekir. [Uyumluluk tablosuna](#uyumluluk) bak.
 - **Wi-Fi** (yalnızca ilk kez).
 - **Geliştirici Modu** açık (siboot yöntemi için).
 - **Apple hesap bilgilerin** — yalnızca cihaz üzerinde uygulamaları imzalamak için kullanılır; asla toplanmaz.
 
-<a id="doc-h5" name="doc-h5"></a>
 ## Nasıl kullanılır
 
 İki kurulum yöntemi var. iOS sürümüne uyanı seç:
 
 | Durumun | Yöntem | PC gerekli mi? |
 | --- | --- | --- |
-| iOS 27 veya üzeri | [Yöntem A — siboot](#doc-h6) (önerilen) | Hayır |
-| iOS 17.4 – 26.7 veya siboot senin için çalışmıyor | [Yöntem B — kurumsal sertifika](#doc-h11) | Evet, bir kez |
+| iOS 27 veya üzeri | [Yöntem A — siboot](#yöntem-a--siboot-ios-27-bilgisayarsız) (önerilen) | Hayır |
+| iOS 17.4 – 26.7 veya siboot senin için çalışmıyor | [Yöntem B — kurumsal sertifika](#yöntem-b--kurumsal-sertifika-eski-ios) | Evet, bir kez |
 
-<a id="doc-h6" name="doc-h6"></a>
 ### Yöntem A — siboot (iOS 27+, bilgisayarsız)
 
 [siboot](https://github.com/FrizzleM/siboot), SideInstaller'ı iPhone'un kendisinden, kendi Apple hesabınla
@@ -113,7 +107,6 @@ imzalayarak kurar: ne bilgisayar ne sertifika gerekir. **iOS 27 veya üzeri**, *
 Modu açık** olması gerekir. [sideinstaller.net](https://sideinstaller.net/) web sitesi 1 ila 3. adımları
 görsel olarak gösteriyor.
 
-<a id="doc-h7" name="doc-h7"></a>
 #### Adım 1 — Ücretsiz üç uygulamayı yükle
 
 Üçünü de App Store'dan yükle:
@@ -122,7 +115,6 @@ görsel olarak gösteriyor.
 - [Open Minis](https://apps.apple.com/app/id6759188481)
 - [LocalDevVPN](https://apps.apple.com/app/id6755608044)
 
-<a id="doc-h8" name="doc-h8"></a>
 #### Adım 2 — rootshell'de eşle
 
 1. rootshell'de **Ayarlar › Konum Günlüğü Modu › Yalnızca Oturum** seçeneğini aç.
@@ -139,7 +131,6 @@ görsel olarak gösteriyor.
    **siboot ile eşle**ye dokun, sonra iPhone parolanı ve rootshell'in gösterdiği kodu gir.
 5. **rootshell'i çalışır durumda bırak** — kapatma.
 
-<a id="doc-h9" name="doc-h9"></a>
 #### Adım 3 — Open Minis'ten yükle
 
 1. **LocalDevVPN**'e bağlan.
@@ -156,7 +147,6 @@ görsel olarak gösteriyor.
 6. **Minis'i açık tut**, bitene kadar. İlk kez Apple hesabına **Ayarlar › Genel › VPN ve Aygıt
    Yönetimi** altında güven.
 
-<a id="doc-h10" name="doc-h10"></a>
 #### Adım 4 — SideInstaller'ı aç
 
 **LocalDevVPN bağlıyken** Apple hesabınla oturum aç ve **SideInstaller'ı yükle** veya
@@ -166,14 +156,12 @@ görsel olarak gösteriyor.
 > Modu anahtarını göstermesini ister; açmak için `--turn-on` ekle.
 > [Ayrıntılar](https://github.com/FrizzleM/siboot/blob/main/minis/README.md#developer-mode) için bak.
 
-<a id="doc-h11" name="doc-h11"></a>
 ### Yöntem B — kurumsal sertifika (eski iOS)
 
 iOS 27'den önceki sürümlerde veya siboot senin için çalışmıyorsa, [sideinstaller.net/#legacy](https://sideinstaller.net/#legacy)
 adresindeki kurumsal sertifikalardan biriyle SideInstaller'ı yükle, sonra yukarıdaki **4. adım**dan devam
-et. (Eski sürümlerde ayrıca bir eşleme dosyası gerekir — bkz. [Uyumluluk](#doc-h14).)
+et. (Eski sürümlerde ayrıca bir eşleme dosyası gerekir — bkz. [Uyumluluk](#uyumluluk).)
 
-<a id="doc-h12" name="doc-h12"></a>
 ### Bağlantılar
 
 SideInstaller üç tür `sideinstaller://` bağlantısı açar ve herhangi biri üzerinde işlem yapmadan önce sorar:
@@ -195,7 +183,6 @@ bağlantısı göndermek için `https://sideinstaller.net/open.html?url=<percent
 adresini kullan. Bu sayfa IPA'nın nereden indirildiğini gösterir ve bağlantıyı `sideinstaller://install`a
 devreder; iOS uygulamayı kendiliğinden açmadığında kullanılacak bir düğmesi de vardır.
 
-<a id="doc-h13" name="doc-h13"></a>
 ### Kestirmeler
 
 SideInstaller'ın araçları Kestirmeler uygulamasındaki eylemlerdir; böylece bir kısayol, bir otomasyon,
@@ -223,17 +210,15 @@ ayarladığında olduğu gibi onu korumak için arka planda çalışmaya devam e
 to *saved place* with SideInstaller", "Reset my location with SideInstaller" ve "Refresh my apps with
 SideInstaller" ifadelerini bilir. Eylemlerin adları İngilizcedir; çalışırken söyledikleri SideInstaller'ın dilindedir.
 
-<a id="doc-h14" name="doc-h14"></a>
 ## Uyumluluk
 
 | iOS | Uyumlu mu? |
 | --- | --- |
 | 27+ | ✅ Evet — siboot ile bilgisayar gerekmez |
-| 26.4 – 26.7 | ⚠️ Evet, ancak [uzaktan eşleme dosyası gerekir](#doc-h15) ve bunun için PC gerekir |
+| 26.4 – 26.7 | ⚠️ Evet, ancak [uzaktan eşleme dosyası gerekir](#ios-264ten-26xe-uzaktan-eşleme-dosyası) ve bunun için PC gerekir |
 | 17.4 – 26.3 | ⚠️ Evet, ancak [bir eşleme dosyası gerekir](https://docs.sidestore.io/docs/advanced/alternative#pairing) ve bunun için PC gerekir |
 | <17.4 | ❌ Hayır |
 
-<a id="doc-h15" name="doc-h15"></a>
 ### iOS 26.4'ten 26.x'e: uzaktan eşleme dosyası
 
 iOS 26.4'ten itibaren iPhone, lockdown eşleme dosyalarını (jitterbugpair,
@@ -251,7 +236,6 @@ dosyası hâlâ çalışır:
 [iLoader](https://github.com/nab138/iloader) ile dışa aktarılmış bir eşleme dosyası (**Manage Pairing File** ›
 **Export**) de iki türü birden içerir ve çalışır.
 
-<a id="doc-h16" name="doc-h16"></a>
 ## SideInstaller güvenli mi?
 
 SideInstaller güvenlik ve gizlilik gözetilerek oluşturuldu. Uygulama tamamen yerel ve açık kaynaklıdır,
@@ -271,7 +255,6 @@ ve yüklemek için kullanılır; hiçbir şekilde iletilmez, günlüğe kaydedil
 > adresinden almadıysan,
 > kimlik bilgilerini ona emanet etme.
 
-<a id="doc-h17" name="doc-h17"></a>
 ## Proje yapısı
 
 | Yol | İçeriği |
@@ -287,12 +270,11 @@ ve yüklemek için kullanılır; hiçbir şekilde iletilmez, günlüğe kaydedil
 deposunda: her sürümün IPA'sını her sertifikayla imzalar, imzalı IPA'ları kendi sürümüne ekler ve
 [sideinstaller.net](https://sideinstaller.net/)i dağıtır. Hiçbir IPA hiçbir depoya asla eklenmez.
 
-SideInstaller'ı [iPhone'un kendisinden kuran](#doc-h5) siboot,
+SideInstaller'ı [iPhone'un kendisinden kuran](#nasıl-kullanılır) siboot,
 [FrizzleM/siboot](https://github.com/FrizzleM/siboot) deposunda. Bu deponun satıcı crate'lerini ve
 rust-core'ın `apple_session.rs` ve `error_text.rs` dosyalarını tek bir commit'e sabitlenmiş bir alt modül
 üzerinden derler; bu yüzden buradaki bir değişiklik siboot'a yalnızca o sabitleme taşındığında ulaşır.
 
-<a id="doc-h18" name="doc-h18"></a>
 ## Katkıda bulunma
 
 Sorunlar ve çekme istekleri memnuniyetle karşılanır. Bir hata bildiriyorsan lütfen iOS sürümünü,
@@ -304,7 +286,6 @@ bir girdisi olması gerekir). Aynı kontroller Mac'te `scripts/test-rust.sh`, `s
 (Xcode projesini oluşturduğu için temiz bir klonda) ve `scripts/check_translations.py` ile
 çalıştırılır.
 
-<a id="doc-h19" name="doc-h19"></a>
 ## Lisans
 
 Bkz. [LICENSE.md](LICENSE.md). Kısaca: **kaynak kodu** kaynak göstererek, ticari olmayan amaçlarla

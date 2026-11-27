@@ -2,14 +2,13 @@
 
 <img src="app-icon.png" alt="SideInstaller" width="120" />
 
-<a id="doc-h1" name="doc-h1"></a>
 # SideInstaller
 
 **Instale o SideStore e o LiveContainer diretamente no seu iPhone — sem precisar de PC.**
 
 [![Install](https://img.shields.io/badge/Install-SideInstaller-2ea44f?style=for-the-badge)](https://sideinstaller.net/)
 [![Version](https://img.shields.io/badge/version-2.2.0-2669ed?style=for-the-badge)](CHANGELOG.md)
-[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?style=for-the-badge&logo=apple)](#doc-h4)
+[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?style=for-the-badge&logo=apple)](#requisitos)
 [![License](https://img.shields.io/badge/license-Custom-orange?style=for-the-badge)](LICENSE.md)
 
 🌐 **Language / 语言:** [English](README.md) · [简体中文](README.zh-CN.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Tiếng Việt](README.vi.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português](README.pt-BR.md) · [Türkçe](README.tr.md)
@@ -44,26 +43,24 @@
 
 ---
 
-<a id="doc-h2" name="doc-h2"></a>
 ## Nesta página
 
-- [O que é](#doc-h3)
-- [Requisitos](#doc-h4)
-- [Como usar](#doc-h5)
-  - [Método A — siboot (iOS 27+, sem PC)](#doc-h6)
-  - [Método B — certificado corporativo (iOS mais antigo)](#doc-h11)
-  - [Links](#doc-h12)
-  - [Atalhos](#doc-h13)
-- [Compatibilidade](#doc-h14)
-  - [iOS 26.4 a 26.x: um arquivo de pareamento remoto](#doc-h15)
-- [O SideInstaller é seguro?](#doc-h16)
-- [Estrutura do projeto](#doc-h17)
-- [Como contribuir](#doc-h18)
-- [Licença](#doc-h19)
+- [O que é](#o-que-é)
+- [Requisitos](#requisitos)
+- [Como usar](#como-usar)
+  - [Método A — siboot (iOS 27+, sem PC)](#método-a--siboot-ios-27-sem-pc)
+  - [Método B — certificado corporativo (iOS mais antigo)](#método-b--certificado-corporativo-ios-mais-antigo)
+  - [Links](#links)
+  - [Atalhos](#atalhos)
+- [Compatibilidade](#compatibilidade)
+  - [iOS 26.4 a 26.x: um arquivo de pareamento remoto](#ios-264-a-26x-um-arquivo-de-pareamento-remoto)
+- [O SideInstaller é seguro?](#o-sideinstaller-é-seguro)
+- [Estrutura do projeto](#estrutura-do-projeto)
+- [Como contribuir](#como-contribuir)
+- [Licença](#licença)
 
 ---
 
-<a id="doc-h3" name="doc-h3"></a>
 ## O que é
 
 O SideStore e o LiveContainer são atualmente a melhor forma de fazer sideload no iOS. Mas há um grande
@@ -84,29 +81,26 @@ E, como é código aberto, você não precisa acreditar apenas na minha palavra.
 disponível para qualquer pessoa ler, auditar ou contribuir, para que você veja exatamente o que está
 rodando no seu dispositivo.
 
-<a id="doc-h4" name="doc-h4"></a>
 ## Requisitos
 
 Antes de começar, certifique-se de ter:
 
 - **Um iPhone ou iPad** com **iOS 27+** — no iOS 17.4+ com um arquivo de pareamento feito num computador; a partir do
-  iOS 26.4, é necessário um [arquivo de pareamento remoto](#doc-h15). Veja a
-  [tabela de compatibilidade](#doc-h14).
+  iOS 26.4, é necessário um [arquivo de pareamento remoto](#ios-264-a-26x-um-arquivo-de-pareamento-remoto). Veja a
+  [tabela de compatibilidade](#compatibilidade).
 - **Wi-Fi** (apenas na primeira vez).
 - **Modo de Desenvolvedor** ativado (para o método siboot).
 - **Suas credenciais da conta Apple** — usadas apenas no dispositivo para assinar apps; nunca coletadas.
 
-<a id="doc-h5" name="doc-h5"></a>
 ## Como usar
 
 Há dois métodos de instalação. Escolha o que corresponde à sua versão do iOS:
 
 | Sua situação | Método | Precisa de PC? |
 | --- | --- | --- |
-| iOS 27 ou posterior | [Método A — siboot](#doc-h6) (recomendado) | Não |
-| iOS 17.4 – 26.7, ou o siboot não funciona para você | [Método B — certificado corporativo](#doc-h11) | Sim, uma vez |
+| iOS 27 ou posterior | [Método A — siboot](#método-a--siboot-ios-27-sem-pc) (recomendado) | Não |
+| iOS 17.4 – 26.7, ou o siboot não funciona para você | [Método B — certificado corporativo](#método-b--certificado-corporativo-ios-mais-antigo) | Sim, uma vez |
 
-<a id="doc-h6" name="doc-h6"></a>
 ### Método A — siboot (iOS 27+, sem PC)
 
 O [siboot](https://github.com/FrizzleM/siboot) instala o SideInstaller a partir do próprio iPhone, assinado
@@ -114,7 +108,6 @@ com sua conta Apple: sem computador e sem certificado. Você precisa do **iOS 27
 **Modo de Desenvolvedor ativado**. O site [sideinstaller.net](https://sideinstaller.net/) mostra as etapas 1 a 3
 visualmente.
 
-<a id="doc-h7" name="doc-h7"></a>
 #### Etapa 1 — Instale três apps gratuitos
 
 Instale os três pela App Store:
@@ -123,7 +116,6 @@ Instale os três pela App Store:
 - [Open Minis](https://apps.apple.com/app/id6759188481)
 - [LocalDevVPN](https://apps.apple.com/app/id6755608044)
 
-<a id="doc-h8" name="doc-h8"></a>
 #### Etapa 2 — Faça o pareamento no rootshell
 
 1. No rootshell, ative **Ajustes › Location Diary Mode › Session Only**.
@@ -140,7 +132,6 @@ Instale os três pela App Store:
    **Parear com o siboot** e digite sua senha do dispositivo e o código que o rootshell mostra.
 5. **Deixe o rootshell rodando** — não o feche.
 
-<a id="doc-h9" name="doc-h9"></a>
 #### Etapa 3 — Instale pelo Open Minis
 
 1. Conecte o **LocalDevVPN**.
@@ -157,7 +148,6 @@ Instale os três pela App Store:
 6. **Mantenha o Minis aberto** até ele dizer que terminou. Na primeira vez, confie na sua conta Apple em
    **Ajustes › Geral › VPN e Gerenciamento de Dispositivo**.
 
-<a id="doc-h10" name="doc-h10"></a>
 #### Etapa 4 — Abra o SideInstaller
 
 Com o **LocalDevVPN conectado**, entre com sua conta Apple e toque em **Instalar o SideStore** ou em
@@ -167,14 +157,12 @@ Com o **LocalDevVPN conectado**, entre com sua conta Apple e toque em **Instalar
 > Desenvolvedor nos Ajustes; adicione `--turn-on` para ativá-la. Veja os
 > [detalhes](https://github.com/FrizzleM/siboot/blob/main/minis/README.md#developer-mode).
 
-<a id="doc-h11" name="doc-h11"></a>
 ### Método B — certificado corporativo (iOS mais antigo)
 
 Em versões do iOS anteriores à 27, ou se o siboot não funcionar para você, instale o SideInstaller com um dos
 certificados corporativos em [sideinstaller.net/#legacy](https://sideinstaller.net/#legacy) e continue a partir da
-**Etapa 4** acima. (Versões mais antigas também precisam de um arquivo de pareamento — veja [Compatibilidade](#doc-h14).)
+**Etapa 4** acima. (Versões mais antigas também precisam de um arquivo de pareamento — veja [Compatibilidade](#compatibilidade).)
 
-<a id="doc-h12" name="doc-h12"></a>
 ### Links
 
 O SideInstaller abre três tipos de link `sideinstaller://` e pede confirmação antes de agir sobre qualquer um deles:
@@ -194,7 +182,6 @@ O Discord e a maioria dos apps de conversa só tornam links `https://` tocáveis
 `https://sideinstaller.net/open.html?url=<percent-encoded https link to an .ipa>`. Essa página mostra de onde o IPA é
 baixado e o entrega a `sideinstaller://install`, com um botão para quando o iOS não abrir o app sozinho.
 
-<a id="doc-h13" name="doc-h13"></a>
 ### Atalhos
 
 As ferramentas do SideInstaller são ações no app Atalhos, para que um atalho, uma automação, o botão de Ação ou a Siri possam
@@ -219,17 +206,15 @@ define uma no app. A Siri reconhece "Spoof my location to *saved place* with Sid
 SideInstaller" e "Refresh my apps with SideInstaller". Os nomes das ações são em inglês; o que elas dizem ao serem
 executadas está no idioma do SideInstaller.
 
-<a id="doc-h14" name="doc-h14"></a>
 ## Compatibilidade
 
 | iOS | É compatível? |
 | --- | --- |
 | 27+ | ✅ Sim — sem PC com o siboot |
-| 26.4 – 26.7 | ⚠️ Sim, mas [é necessário um arquivo de pareamento remoto](#doc-h15), o que exige um PC |
+| 26.4 – 26.7 | ⚠️ Sim, mas [é necessário um arquivo de pareamento remoto](#ios-264-a-26x-um-arquivo-de-pareamento-remoto), o que exige um PC |
 | 17.4 – 26.3 | ⚠️ Sim, mas [é necessário um arquivo de pareamento](https://docs.sidestore.io/docs/advanced/alternative#pairing), o que exige um PC |
 | <17.4 | ❌ Não |
 
-<a id="doc-h15" name="doc-h15"></a>
 ### iOS 26.4 a 26.x: um arquivo de pareamento remoto
 
 A partir do iOS 26.4, o iPhone derruba a conexão com arquivos de pareamento lockdown (do jitterbugpair,
@@ -247,7 +232,6 @@ remoto (RPPairing) ainda funciona:
 Um arquivo de pareamento exportado do [iLoader](https://github.com/nab138/iloader) (**Manage Pairing File** ›
 **Export**) contém os dois tipos e também funciona.
 
-<a id="doc-h16" name="doc-h16"></a>
 ## O SideInstaller é seguro?
 
 O SideInstaller foi criado com segurança e privacidade em mente. O app é totalmente local e de código aberto, o que
@@ -267,7 +251,6 @@ instalar seus apps, e nunca são transmitidas, registradas em log ou coletadas d
 > https://sideinstaller.net/, não confie nele suas
 > credenciais.
 
-<a id="doc-h17" name="doc-h17"></a>
 ## Estrutura do projeto
 
 | Caminho | O que contém |
@@ -283,12 +266,11 @@ As versões assinadas e a página de instalação ficam em [FrizzleM/SideInstall
 ela assina o IPA de cada versão com todos os certificados, anexa os IPAs assinados a uma versão própria e
 publica [sideinstaller.net](https://sideinstaller.net/). Nenhum IPA é enviado para nenhum dos dois repositórios.
 
-O siboot, que instala o SideInstaller [pelo próprio iPhone](#doc-h5),
+O siboot, que instala o SideInstaller [pelo próprio iPhone](#como-usar),
 fica em [FrizzleM/siboot](https://github.com/FrizzleM/siboot). Ele compila os crates vendorizados deste repositório
 e o `apple_session.rs` e o `error_text.rs` do rust-core por meio de um submódulo fixado em um commit, então uma
 alteração aqui só chega ao siboot quando essa fixação muda.
 
-<a id="doc-h18" name="doc-h18"></a>
 ## Como contribuir
 
 Issues e pull requests são bem-vindos. Se você estiver relatando um bug, inclua sua versão do iOS, a versão do app
@@ -300,7 +282,6 @@ os testes unitários do app e as traduções (uma string adicionada ao app preci
 `scripts/check-ios.sh` (num clone limpo, já que ele gera o projeto Xcode) e
 `scripts/check_translations.py`.
 
-<a id="doc-h19" name="doc-h19"></a>
 ## Licença
 
 Veja [LICENSE.md](LICENSE.md). Em resumo: você pode ler, modificar e compartilhar o **código-fonte**, com

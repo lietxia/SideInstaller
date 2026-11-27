@@ -2,14 +2,13 @@
 
 <img src="app-icon.png" alt="SideInstaller" width="120" />
 
-<a id="doc-h1" name="doc-h1"></a>
 # SideInstaller
 
 **Installa SideStore e LiveContainer direttamente sul tuo iPhone — senza PC.**
 
 [![Install](https://img.shields.io/badge/Install-SideInstaller-2ea44f?style=for-the-badge)](https://sideinstaller.net/)
 [![Version](https://img.shields.io/badge/version-2.2.0-2669ed?style=for-the-badge)](CHANGELOG.md)
-[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?style=for-the-badge&logo=apple)](#doc-h4)
+[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?style=for-the-badge&logo=apple)](#requisiti)
 [![License](https://img.shields.io/badge/license-Custom-orange?style=for-the-badge)](LICENSE.md)
 
 🌐 **Language / 语言:** [English](README.md) · [简体中文](README.zh-CN.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Tiếng Việt](README.vi.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português](README.pt-BR.md) · [Türkçe](README.tr.md)
@@ -45,26 +44,24 @@
 
 ---
 
-<a id="doc-h2" name="doc-h2"></a>
 ## In questa pagina
 
-- [Che cos'è](#doc-h3)
-- [Requisiti](#doc-h4)
-- [Come usarlo](#doc-h5)
-  - [Metodo A — siboot (iOS 27+, senza PC)](#doc-h6)
-  - [Metodo B — certificato enterprise (iOS precedenti)](#doc-h11)
-  - [Link](#doc-h12)
-  - [Comandi Rapidi](#doc-h13)
-- [Compatibilità](#doc-h14)
-  - [iOS 26.4 a 26.x: un file di abbinamento remoto](#doc-h15)
-- [SideInstaller è sicuro?](#doc-h16)
-- [Struttura del progetto](#doc-h17)
-- [Contribuire](#doc-h18)
-- [Licenza](#doc-h19)
+- [Che cos'è](#che-cosè)
+- [Requisiti](#requisiti)
+- [Come usarlo](#come-usarlo)
+  - [Metodo A — siboot (iOS 27+, senza PC)](#metodo-a--siboot-ios-27-senza-pc)
+  - [Metodo B — certificato enterprise (iOS precedenti)](#metodo-b--certificato-enterprise-ios-precedenti)
+  - [Link](#link)
+  - [Comandi Rapidi](#comandi-rapidi)
+- [Compatibilità](#compatibilità)
+  - [iOS 26.4 a 26.x: un file di abbinamento remoto](#ios-264-a-26x-un-file-di-abbinamento-remoto)
+- [SideInstaller è sicuro?](#sideinstaller-è-sicuro)
+- [Struttura del progetto](#struttura-del-progetto)
+- [Contribuire](#contribuire)
+- [Licenza](#licenza)
 
 ---
 
-<a id="doc-h3" name="doc-h3"></a>
 ## Che cos'è
 
 SideStore e LiveContainer sono attualmente il modo migliore per fare sideloading su iOS. Però c'è un grande problema: installarli richiede un PC, che molte persone non hanno. Per questo ho creato SideInstaller, un'app iOS gratuita e open source che li installa direttamente sul tuo iPhone, senza bisogno di un PC.
@@ -75,32 +72,28 @@ Il tutto è pensato per essere semplice. Nessuna configurazione complicata, ness
 
 E siccome è open source, non devi fidarti solo della mia parola. Il codice completo è disponibile perché chiunque lo legga, lo verifichi o contribuisca, così puoi vedere esattamente cosa gira sul tuo dispositivo.
 
-<a id="doc-h4" name="doc-h4"></a>
 ## Requisiti
 
 Prima di iniziare, assicurati di avere:
 
-- **Un iPhone o un iPad** con **iOS 27+** — su iOS 17.4+ con un file di abbinamento creato su un computer; da iOS 26.4 serve un [file di abbinamento remoto](#doc-h15). Vedi la [tabella di compatibilità](#doc-h14).
+- **Un iPhone o un iPad** con **iOS 27+** — su iOS 17.4+ con un file di abbinamento creato su un computer; da iOS 26.4 serve un [file di abbinamento remoto](#ios-264-a-26x-un-file-di-abbinamento-remoto). Vedi la [tabella di compatibilità](#compatibilità).
 - **Wi-Fi** (solo la prima volta).
 - **Modalità sviluppatore** attiva (per il metodo siboot).
 - **Le tue credenziali Apple** — usate solo sul dispositivo per firmare le app; mai raccolte.
 
-<a id="doc-h5" name="doc-h5"></a>
 ## Come usarlo
 
 Esistono due metodi di installazione. Scegli quello che corrisponde alla tua versione di iOS:
 
 | La tua situazione | Metodo | Serve un PC? |
 | --- | --- | --- |
-| iOS 27 o successivo | [Metodo A — siboot](#doc-h6) (consigliato) | No |
-| iOS 17.4 – 26.7, oppure siboot non funziona per te | [Metodo B — certificato enterprise](#doc-h11) | Sì, una volta sola |
+| iOS 27 o successivo | [Metodo A — siboot](#metodo-a--siboot-ios-27-senza-pc) (consigliato) | No |
+| iOS 17.4 – 26.7, oppure siboot non funziona per te | [Metodo B — certificato enterprise](#metodo-b--certificato-enterprise-ios-precedenti) | Sì, una volta sola |
 
-<a id="doc-h6" name="doc-h6"></a>
 ### Metodo A — siboot (iOS 27+, senza PC)
 
 [siboot](https://github.com/FrizzleM/siboot) installa SideInstaller dall'iPhone stesso, firmato con il tuo account Apple: nessun computer e nessun certificato. Serve **iOS 27 o successivo**, il **Wi-Fi** e la **Modalità sviluppatore attiva**. Il sito [sideinstaller.net](https://sideinstaller.net/) mostra i passaggi da 1 a 3 in modo visivo.
 
-<a id="doc-h7" name="doc-h7"></a>
 #### Passaggio 1 — Installa tre app gratuite
 
 Installa tutte e tre dall'App Store:
@@ -109,7 +102,6 @@ Installa tutte e tre dall'App Store:
 - [Open Minis](https://apps.apple.com/app/id6759188481)
 - [LocalDevVPN](https://apps.apple.com/app/id6755608044)
 
-<a id="doc-h8" name="doc-h8"></a>
 #### Passaggio 2 — Esegui l'abbinamento in rootshell
 
 1. In rootshell, attiva **Impostazioni › Modalità Diario posizioni › Solo sessione**.
@@ -126,7 +118,6 @@ Installa tutte e tre dall'App Store:
    **Abbina a siboot**, poi inserisci il codice di sblocco e il codice mostrato da rootshell.
 5. **Lascia rootshell in esecuzione**: non chiuderlo.
 
-<a id="doc-h9" name="doc-h9"></a>
 #### Passaggio 3 — Installa da Open Minis
 
 1. Connetti **LocalDevVPN**.
@@ -143,7 +134,6 @@ Installa tutte e tre dall'App Store:
 6. **Lascia Minis aperto** finché non dice che ha finito. La prima volta, autorizza il tuo account Apple in
    **Impostazioni › Generali › VPN e gestione dispositivi**.
 
-<a id="doc-h10" name="doc-h10"></a>
 #### Passaggio 4 — Apri SideInstaller
 
 Con **LocalDevVPN connesso**, accedi con il tuo account Apple e tocca **Installa SideStore** o
@@ -153,14 +143,12 @@ Con **LocalDevVPN connesso**, accedi con il tuo account Apple e tocca **Installa
 > l'interruttore della Modalità sviluppatore in Impostazioni; aggiungi `--turn-on` per attivarlo. Vedi i
 > [dettagli](https://github.com/FrizzleM/siboot/blob/main/minis/README.md#developer-mode).
 
-<a id="doc-h11" name="doc-h11"></a>
 ### Metodo B — certificato enterprise (iOS precedenti)
 
 Su versioni di iOS precedenti alla 27, oppure se siboot non funziona per te, installa SideInstaller con uno dei
 certificati enterprise su [sideinstaller.net/#legacy](https://sideinstaller.net/#legacy), poi continua dal
-**passaggio 4** qui sopra. (Le versioni precedenti richiedono anche un file di abbinamento — vedi [Compatibilità](#doc-h14).)
+**passaggio 4** qui sopra. (Le versioni precedenti richiedono anche un file di abbinamento — vedi [Compatibilità](#compatibilità).)
 
-<a id="doc-h12" name="doc-h12"></a>
 ### Link
 
 SideInstaller apre tre tipi di link `sideinstaller://` e chiede conferma prima di agire su ciascuno:
@@ -183,7 +171,6 @@ un link di installazione usa
 da dove viene scaricato l'IPA e lo passa a `sideinstaller://install`, con un pulsante per quando iOS
 non apre l'app da solo.
 
-<a id="doc-h13" name="doc-h13"></a>
 ### Comandi Rapidi
 
 Gli strumenti di SideInstaller sono azioni nell'app Comandi Rapidi, quindi una scorciatoia, un'automazione,
@@ -211,17 +198,15 @@ girare in background per mantenerla, come quando ne imposti una dall'app. Siri r
 to *saved place* with SideInstaller", "Reset my location with SideInstaller" e "Refresh my apps with
 SideInstaller". I nomi delle azioni sono in inglese; ciò che dicono quando girano è nella lingua di SideInstaller.
 
-<a id="doc-h14" name="doc-h14"></a>
 ## Compatibilità
 
 | iOS | È compatibile? |
 | --- | --- |
 | 27+ | ✅ Sì — con siboot non serve un PC |
-| 26.4 – 26.7 | ⚠️ Sì, ma [serve un file di abbinamento remoto](#doc-h15), e quindi un PC |
+| 26.4 – 26.7 | ⚠️ Sì, ma [serve un file di abbinamento remoto](#ios-264-a-26x-un-file-di-abbinamento-remoto), e quindi un PC |
 | 17.4 – 26.3 | ⚠️ Sì, ma [serve un file di abbinamento](https://docs.sidestore.io/docs/advanced/alternative#pairing), e quindi un PC |
 | <17.4 | ❌ No |
 
-<a id="doc-h15" name="doc-h15"></a>
 ### iOS 26.4 a 26.x: un file di abbinamento remoto
 
 Da iOS 26.4 in poi, l'iPhone chiude la connessione con i file di abbinamento lockdown (di jitterbugpair,
@@ -239,7 +224,6 @@ ancora:
 Un file di abbinamento esportato da [iLoader](https://github.com/nab138/iloader) (**Manage Pairing File** ›
 **Export**) contiene entrambi i tipi e funziona ugualmente.
 
-<a id="doc-h16" name="doc-h16"></a>
 ## SideInstaller è sicuro?
 
 SideInstaller è realizzato pensando alla sicurezza e alla privacy. L'app è completamente locale e open source,
@@ -259,7 +243,6 @@ installare le tue app, e non vengono mai trasmesse, registrate o raccolte in alc
 > https://sideinstaller.net/, non affidargli le tue
 > credenziali.
 
-<a id="doc-h17" name="doc-h17"></a>
 ## Struttura del progetto
 
 | Percorso | Contenuto |
@@ -275,12 +258,11 @@ Le build firmate e la pagina di installazione si trovano in [FrizzleM/SideInstal
 firma l'IPA di ogni release con ogni certificato, allega le IPA firmate a una release propria e distribuisce
 [sideinstaller.net](https://sideinstaller.net/). Nessuna IPA viene mai inclusa nei repository.
 
-siboot, che installa SideInstaller [dall'iPhone stesso](#doc-h5),
+siboot, che installa SideInstaller [dall'iPhone stesso](#come-usarlo),
 si trova in [FrizzleM/siboot](https://github.com/FrizzleM/siboot). Compila le crate vendored di questo
 repository e `apple_session.rs` e `error_text.rs` di rust-core tramite un submodule fissato a un commit,
 quindi una modifica qui arriva a siboot solo quando quel riferimento si aggiorna.
 
-<a id="doc-h18" name="doc-h18"></a>
 ## Contribuire
 
 Segnalazioni e pull request sono benvenute. Se segnali un bug, indicare la tua versione di iOS, la versione
@@ -292,7 +274,6 @@ con i test unitari dell'app e le traduzioni (una stringa aggiunta all'app deve a
 `scripts/check-ios.sh` (in un clone pulito, perché genera il progetto Xcode) e
 `scripts/check_translations.py`.
 
-<a id="doc-h19" name="doc-h19"></a>
 ## Licenza
 
 Vedi [LICENSE.md](LICENSE.md). In breve: puoi leggere, modificare e condividere il **codice sorgente**, con

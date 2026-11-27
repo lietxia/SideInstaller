@@ -2,14 +2,13 @@
 
 <img src="app-icon.png" alt="SideInstaller" width="120" />
 
-<a id="doc-h1" name="doc-h1"></a>
 # SideInstaller
 
 **Cài đặt SideStore và LiveContainer ngay trên iPhone của bạn — không cần máy tính.**
 
 [![Install](https://img.shields.io/badge/Install-SideInstaller-2ea44f?style=for-the-badge)](https://sideinstaller.net/)
 [![Version](https://img.shields.io/badge/version-2.2.0-2669ed?style=for-the-badge)](CHANGELOG.md)
-[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?style=for-the-badge&logo=apple)](#doc-h4)
+[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?style=for-the-badge&logo=apple)](#yêu-cầu)
 [![License](https://img.shields.io/badge/license-Custom-orange?style=for-the-badge)](LICENSE.md)
 
 🌐 **Language / 语言:** [English](README.md) · [简体中文](README.zh-CN.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Tiếng Việt](README.vi.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português](README.pt-BR.md) · [Türkçe](README.tr.md)
@@ -44,26 +43,24 @@
 
 ---
 
-<a id="doc-h2" name="doc-h2"></a>
 ## Nội dung trang này
 
-- [SideInstaller là gì](#doc-h3)
-- [Yêu cầu](#doc-h4)
-- [Cách sử dụng](#doc-h5)
-  - [Phương pháp A — siboot (iOS 27+, không cần PC)](#doc-h6)
-  - [Phương pháp B — chứng chỉ doanh nghiệp (iOS cũ hơn)](#doc-h11)
-  - [Liên kết](#doc-h12)
-  - [Phím tắt](#doc-h13)
-- [Khả năng tương thích](#doc-h14)
-  - [iOS 26.4 đến 26.x: tệp ghép nối từ xa](#doc-h15)
-- [SideInstaller có an toàn không?](#doc-h16)
-- [Cấu trúc dự án](#doc-h17)
-- [Đóng góp](#doc-h18)
-- [Giấy phép](#doc-h19)
+- [SideInstaller là gì](#sideinstaller-là-gì)
+- [Yêu cầu](#yêu-cầu)
+- [Cách sử dụng](#cách-sử-dụng)
+  - [Phương pháp A — siboot (iOS 27+, không cần PC)](#phương-pháp-a--siboot-ios-27-không-cần-pc)
+  - [Phương pháp B — chứng chỉ doanh nghiệp (iOS cũ hơn)](#phương-pháp-b--chứng-chỉ-doanh-nghiệp-ios-cũ-hơn)
+  - [Liên kết](#liên-kết)
+  - [Phím tắt](#phím-tắt)
+- [Khả năng tương thích](#khả-năng-tương-thích)
+  - [iOS 26.4 đến 26.x: tệp ghép nối từ xa](#ios-264-đến-26x-tệp-ghép-nối-từ-xa)
+- [SideInstaller có an toàn không?](#sideinstaller-có-an-toàn-không)
+- [Cấu trúc dự án](#cấu-trúc-dự-án)
+- [Đóng góp](#đóng-góp)
+- [Giấy phép](#giấy-phép)
 
 ---
 
-<a id="doc-h3" name="doc-h3"></a>
 ## SideInstaller là gì
 
 SideStore và LiveContainer hiện là cách tốt nhất để sideload trên iOS. Tuy nhiên, có một
@@ -83,29 +80,26 @@ xoá bỏ rào cản lớn nhất để bắt đầu.
 Và vì là mã nguồn mở, bạn không phải chỉ tin lời tôi. Toàn bộ mã nguồn đều có sẵn cho
 bất kỳ ai đọc, kiểm tra hoặc đóng góp, nên bạn có thể thấy chính xác thứ đang chạy trên thiết bị của mình.
 
-<a id="doc-h4" name="doc-h4"></a>
 ## Yêu cầu
 
 Trước khi bắt đầu, hãy đảm bảo bạn có:
 
 - **iPhone hoặc iPad** chạy **iOS 27+** — trên iOS 17.4+ cần có tệp ghép nối tạo trên máy tính; từ
-  iOS 26.4 cần [tệp ghép nối từ xa](#doc-h15). Xem
-  [bảng tương thích](#doc-h14).
+  iOS 26.4 cần [tệp ghép nối từ xa](#ios-264-đến-26x-tệp-ghép-nối-từ-xa). Xem
+  [bảng tương thích](#khả-năng-tương-thích).
 - **Wi-Fi** (chỉ lần đầu).
 - **Chế độ nhà phát triển** đã bật (đối với phương pháp siboot).
 - **Thông tin tài khoản Apple của bạn** — chỉ dùng trên thiết bị để ký ứng dụng; không bao giờ bị thu thập.
 
-<a id="doc-h5" name="doc-h5"></a>
 ## Cách sử dụng
 
 Có hai phương pháp cài đặt. Hãy chọn phương pháp phù hợp với phiên bản iOS của bạn:
 
 | Tình huống của bạn | Phương pháp | Cần PC? |
 | --- | --- | --- |
-| iOS 27 trở lên | [Phương pháp A — siboot](#doc-h6) (khuyến nghị) | Không |
-| iOS 17.4 – 26.7, hoặc siboot không hoạt động với bạn | [Phương pháp B — chứng chỉ doanh nghiệp](#doc-h11) | Có, một lần |
+| iOS 27 trở lên | [Phương pháp A — siboot](#phương-pháp-a--siboot-ios-27-không-cần-pc) (khuyến nghị) | Không |
+| iOS 17.4 – 26.7, hoặc siboot không hoạt động với bạn | [Phương pháp B — chứng chỉ doanh nghiệp](#phương-pháp-b--chứng-chỉ-doanh-nghiệp-ios-cũ-hơn) | Có, một lần |
 
-<a id="doc-h6" name="doc-h6"></a>
 ### Phương pháp A — siboot (iOS 27+, không cần PC)
 
 [siboot](https://github.com/FrizzleM/siboot) cài SideInstaller ngay từ iPhone, được ký bằng
@@ -113,7 +107,6 @@ tài khoản Apple của chính bạn: không cần máy tính cũng không cầ
 **Wi-Fi** và **Chế độ nhà phát triển đang bật**. Trang web [sideinstaller.net](https://sideinstaller.net/) trình bày trực quan
 các bước 1 đến 3.
 
-<a id="doc-h7" name="doc-h7"></a>
 #### Bước 1 — Cài ba ứng dụng miễn phí
 
 Cài cả ba từ App Store:
@@ -122,7 +115,6 @@ Cài cả ba từ App Store:
 - [Open Minis](https://apps.apple.com/app/id6759188481)
 - [LocalDevVPN](https://apps.apple.com/app/id6755608044)
 
-<a id="doc-h8" name="doc-h8"></a>
 #### Bước 2 — Ghép nối trong rootshell
 
 1. Trong rootshell, bật **Cài đặt › Nhật ký vị trí › Chỉ phiên**.
@@ -139,7 +131,6 @@ Cài cả ba từ App Store:
    **Ghép nối với siboot**, rồi nhập mật mã và mã mà rootshell hiển thị.
 5. **Giữ rootshell chạy** — đừng đóng ứng dụng.
 
-<a id="doc-h9" name="doc-h9"></a>
 #### Bước 3 — Cài từ Open Minis
 
 1. Kết nối **LocalDevVPN**.
@@ -156,7 +147,6 @@ Cài cả ba từ App Store:
 6. **Giữ Minis mở** cho đến khi báo hoàn tất. Lần đầu, hãy tin cậy tài khoản Apple của bạn trong
    **Cài đặt › Cài đặt chung › VPN & Quản lý thiết bị**.
 
-<a id="doc-h10" name="doc-h10"></a>
 #### Bước 4 — Mở SideInstaller
 
 Khi **LocalDevVPN đã kết nối**, đăng nhập bằng tài khoản Apple của bạn và nhấn **Cài đặt SideStore** hoặc
@@ -166,14 +156,12 @@ Khi **LocalDevVPN đã kết nối**, đăng nhập bằng tài khoản Apple c�
 > trong Cài đặt; thêm `--turn-on` để bật nó. Xem
 > [chi tiết](https://github.com/FrizzleM/siboot/blob/main/minis/README.md#developer-mode).
 
-<a id="doc-h11" name="doc-h11"></a>
 ### Phương pháp B — chứng chỉ doanh nghiệp (iOS cũ hơn)
 
 Trên các phiên bản iOS trước 27, hoặc nếu siboot không hoạt động với bạn, hãy cài SideInstaller bằng một trong các
 chứng chỉ doanh nghiệp tại [sideinstaller.net/#legacy](https://sideinstaller.net/#legacy), rồi tiếp tục
-từ **Bước 4** ở trên. (Các phiên bản cũ cũng cần tệp ghép nối — xem [Khả năng tương thích](#doc-h14).)
+từ **Bước 4** ở trên. (Các phiên bản cũ cũng cần tệp ghép nối — xem [Khả năng tương thích](#khả-năng-tương-thích).)
 
-<a id="doc-h12" name="doc-h12"></a>
 ### Liên kết
 
 SideInstaller mở ba loại liên kết `sideinstaller://` và luôn hỏi trước khi thực hiện bất kỳ liên kết nào:
@@ -195,7 +183,6 @@ Discord và hầu hết các ứng dụng trò chuyện chỉ cho liên kết `h
 nguồn tải IPA và chuyển nó cho `sideinstaller://install`, kèm một nút bấm cho trường hợp iOS
 không tự mở ứng dụng.
 
-<a id="doc-h13" name="doc-h13"></a>
 ### Phím tắt
 
 Các công cụ của SideInstaller là các action trong ứng dụng Phím tắt, nên một phím tắt, một tự động hóa,
@@ -223,17 +210,15 @@ SideInstaller tiếp tục chạy nền để giữ vị trí đó, giống như
 SideInstaller", "Reset my location with SideInstaller" và "Refresh my apps with SideInstaller".
 Tên các action bằng tiếng Anh; lời chúng nói khi chạy thì theo ngôn ngữ của SideInstaller.
 
-<a id="doc-h14" name="doc-h14"></a>
 ## Khả năng tương thích
 
 | iOS | Có tương thích không? |
 | --- | --- |
 | 27+ | ✅ Có — không cần PC với siboot |
-| 26.4 – 26.7 | ⚠️ Có, nhưng [cần tệp ghép nối từ xa](#doc-h15) và việc đó cần PC |
+| 26.4 – 26.7 | ⚠️ Có, nhưng [cần tệp ghép nối từ xa](#ios-264-đến-26x-tệp-ghép-nối-từ-xa) và việc đó cần PC |
 | 17.4 – 26.3 | ⚠️ Có, nhưng [cần tệp ghép nối](https://docs.sidestore.io/docs/advanced/alternative#pairing) và việc đó cần PC |
 | <17.4 | ❌ Không |
 
-<a id="doc-h15" name="doc-h15"></a>
 ### iOS 26.4 đến 26.x: tệp ghép nối từ xa
 
 Từ iOS 26.4, iPhone ngắt kết nối với các tệp ghép nối lockdown (từ jitterbugpair,
@@ -251,7 +236,6 @@ vẫn hoạt động:
 Một tệp ghép nối xuất từ [iLoader](https://github.com/nab138/iloader) (**Manage Pairing File** ›
 **Export**) chứa cả hai loại và cũng dùng được.
 
-<a id="doc-h16" name="doc-h16"></a>
 ## SideInstaller có an toàn không?
 
 SideInstaller được xây dựng với sự an toàn và quyền riêng tư trong tâm. Ứng dụng hoàn toàn chạy cục bộ và là mã nguồn mở,
@@ -271,7 +255,6 @@ nên bất kỳ ai cũng có thể kiểm tra chính xác những gì nó làm.
 > https://sideinstaller.net/, đừng tin tưởng nó với
 > thông tin đăng nhập của bạn.
 
-<a id="doc-h17" name="doc-h17"></a>
 ## Cấu trúc dự án
 
 | Đường dẫn | Nội dung |
@@ -287,12 +270,11 @@ Các bản dựng đã ký và trang cài đặt nằm trong [FrizzleM/SideInsta
 kho này ký IPA của mỗi bản phát hành bằng từng chứng chỉ, đính kèm các IPA đã ký vào một release của riêng nó và
 triển khai [sideinstaller.net](https://sideinstaller.net/). Không IPA nào được commit vào một trong hai kho.
 
-siboot, công cụ cài SideInstaller [ngay từ iPhone](#doc-h5),
+siboot, công cụ cài SideInstaller [ngay từ iPhone](#cách-sử-dụng),
 nằm trong [FrizzleM/siboot](https://github.com/FrizzleM/siboot). Nó build các crate được vendored trong kho này
 và `apple_session.rs` cùng `error_text.rs` của rust-core thông qua một submodule khóa ở một commit cụ thể, nên một thay đổi
 ở đây chỉ tới siboot khi khóa đó được cập nhật.
 
-<a id="doc-h18" name="doc-h18"></a>
 ## Đóng góp
 
 Rất hoan nghênh các issue và pull request. Nếu bạn báo lỗi, hãy kèm phiên bản iOS, phiên bản ứng dụng
@@ -304,7 +286,6 @@ các bài test đơn vị của ứng dụng, và bản dịch (một chuỗi th
 `scripts/check-ios.sh` (trong một bản clone sạch, vì tập lệnh này tạo dự án Xcode) và
 `scripts/check_translations.py`.
 
-<a id="doc-h19" name="doc-h19"></a>
 ## Giấy phép
 
 Xem [LICENSE.md](LICENSE.md). Tóm lại: bạn có thể đọc, sửa và chia sẻ **mã nguồn**, kèm ghi nhận tác giả,
